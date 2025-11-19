@@ -101,17 +101,6 @@
         color: var(--main-purple);
         font-weight: 600;
       }
-      #langToggle {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        background: transparent;
-        border: 1px solid var(--main-purple);
-        color: var(--main-purple);
-        border-radius: 6px;
-        padding: 6px 10px;
-        cursor: pointer;
-      }
       .endpage {
         text-align: center;
         padding: 100px 20px;
@@ -129,24 +118,152 @@
   </head>
 
   <body>
-    <button id="langToggle">العربية 🇸🇦</button>
-
     <div class="content" id="mainContent">
       <img src="logo.png" class="logo" alt="Saleaah logo" />
 
       <h1 id="jobTitle">Sales Specialist</h1>
 
-      <div id="desc">
-        <h2 id="respTitle">Key Responsibilities:</h2>
-        <ul id="respList">
-          <li>
-            Building and nurturing strong relationships with our current clients.
-          </li>
-          <li>
-            Strategically expanding our clients' network by identifying and securing the best deals.
-          </li>
-          <li>
-            Leading the expansion into new clients aligned with Saleaah's vision.
-          </li>
-          <li>Coordinating the entire order cycle with clients.</li>
-          <
+      <h2>Key Responsibilities:</h2>
+      <ul>
+        <li>
+          Building and nurturing strong relationships with our current clients.
+        </li>
+        <li>
+          Strategically expanding our clients' network by identifying and
+          securing the best deals.
+        </li>
+        <li>
+          Leading the expansion into new clients aligned with Saleaah's vision.
+        </li>
+        <li>Coordinating the entire order cycle with clients.</li>
+        <li>
+          Collaborating closely with the procurement team to ensure smooth
+          operations.
+        </li>
+        <li>
+          Leading negotiations on prices and other critical terms with clients.
+        </li>
+      </ul>
+
+      <h2>Requirements:</h2>
+      <ul>
+        <li>
+          Bachelor's degree in Marketing, Business Administration, or a related
+          field.
+        </li>
+        <li>1–3 years of experience in customer relations or sales.</li>
+        <li>
+          Strong analytical and problem-solving skills, data-driven
+          decision-making.
+        </li>
+        <li>Excellent communication and interpersonal skills.</li>
+        <li>Exceptional organizational skills and meticulous attention.</li>
+        <li>Experience in the Poultry Industry.</li>
+        <li>Proficiency in MS Excel.</li>
+        <li>Fluency in Arabic and English.</li>
+        <li>Saudi Nationality – Riyadh-based.</li>
+      </ul>
+
+      <form id="jobForm" enctype="multipart/form-data">
+        <label>Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label>Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label>Phone Number</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9]{9,}" />
+
+        <label>Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label>Nationality</label>
+        <select id="nationality" name="nationality" required>
+          <option value="">Select</option>
+          <option value="Saudi">Saudi</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <label>Are you based in Riyadh?</label>
+        <select id="riyadh" name="riyadh" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label>Do you have a bachelor's degree?</label>
+        <select id="degree" name="degree" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label>Have you worked in the Food & Beverage industry?</label>
+        <select id="fnb" name="fnb" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label>Have you worked in the Poultry industry?</label>
+        <select id="poultry" name="poultry" required>
+          <option value="">Select</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+
+        <label>LinkedIn Profile</label>
+        <input type="url" id="linkedin" name="linkedin" required />
+
+        <label>Upload your CV (PDF/DOC)</label>
+        <input
+          type="file"
+          id="cv"
+          name="cv"
+          accept=".pdf,.doc,.docx"
+          required
+        />
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+
+    <div class="endpage" id="endPage">
+      <h2>Your application has been submitted ✔</h2>
+      <p>Thank you for applying. Our team will review your profile and contact you if there is a match.</p>
+    </div>
+
+    <footer class="footer">
+      © 2025 <span>Saleaah</span> — All rights reserved
+    </footer>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwHEVU5i0HcY0qz4EbyPkcJdL_NwWq72q03KGs-mKufnuFsh_h67zNbqGIxeATBupcj5g/exec";
+
+      const form = document.getElementById("jobForm");
+      const mainContent = document.getElementById("mainContent");
+      const endPage = document.getElementById("endPage");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+          const res = await fetch(scriptURL, { method: "POST", body: formData });
+          if (res.ok) {
+            mainContent.style.display = "none";
+            endPage.style.display = "block";
+          } else {
+            alert("❌ Error submitting form, please try again.");
+          }
+        } catch (err) {
+          alert("⚠️ Connection issue, please retry.");
+        }
+      });
+    </script>
+  </body>
+</html>
