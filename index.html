@@ -265,8 +265,8 @@
     </footer>
 
     <script>
-      // تحديث الرابط إلى تطبيق الويب الخاص بك
-      const scriptURL = "https://script.google.com/macros/s/AKfycby-Ez4JnKGZOdJJHauvfhpt0HYlNFFgDtBBQ6LeRQfhriX-1HAxLGRUvx_rgTvIBvxHuw/exec";
+      // تحديث هذا العنوان مع عنوان webhook الخاص بك من Make.com
+      const webhookURL = "https://hook.eu2.make.com/stktg5xxj5j7r65dcxsbkywvcxgoq48h";
       
       const form = document.getElementById("jobForm");
       const mainContent = document.getElementById("mainContent");
@@ -288,30 +288,42 @@
             throw new Error("Please select a CV file");
           }
           
-          // إعداد بيانات النموذج
-          const formData = new FormData();
+          const file = fileInput.files[0];
           
-          // إضافة جميع حقول النموذج النصية
-          formData.append('name', document.getElementById('name').value);
-          formData.append('email', document.getElementById('email').value);
-          formData.append('phone', document.getElementById('phone').value);
-          formData.append('gender', document.getElementById('gender').value);
-          formData.append('nationality', document.getElementById('nationality').value);
-          formData.append('riyadh', document.getElementById('riyadh').value);
-          formData.append('degree', document.getElementById('degree').value);
-          formData.append('fnb', document.getElementById('fnb').value);
-          formData.append('poultry', document.getElementById('poultry').value);
-          formData.append('linkedin', document.getElementById('linkedin').value);
+          // قراءة الملف كـ base64
+          const base64File = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+          });
           
-          // إضافة ملف السيرة الذاتية
-          formData.append('cv', fileInput.files[0]);
+          // إعداد البيانات للإرسال
+          const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            gender: document.getElementById('gender').value,
+            nationality: document.getElementById('nationality').value,
+            riyadh: document.getElementById('riyadh').value,
+            degree: document.getElementById('degree').value,
+            fnb: document.getElementById('fnb').value,
+            poultry: document.getElementById('poultry').value,
+            linkedin: document.getElementById('linkedin').value,
+            cv: base64File,
+            filename: file.name,
+            filetype: file.type
+          };
           
-          console.log("Sending form data...");
+          console.log("Sending data to Make.com webhook...");
           
-          // تعديل طريقة الإرسال لتكون أكثر تبسيطًا (استخدام fetch مع FormData مباشرة)
-          const response = await fetch(scriptURL, {
+          // إرسال البيانات إلى webhook
+          const response = await fetch(webhookURL, {
             method: 'POST',
-            body: formData
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
           });
           
           console.log("Response received:", response);
