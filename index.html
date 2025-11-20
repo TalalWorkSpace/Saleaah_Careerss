@@ -2,178 +2,131 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Saleaah | Careers</title>
+    <title>Saleaah | Sales Specialist</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+
       :root {
         --main-purple: #745ff2;
         --text-dark: #222;
       }
+
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+
       body {
         font-family: "Cairo", sans-serif;
         background-color: #fff;
-        overflow-x: hidden;
+        color: var(--text-dark);
+        line-height: 1.8;
       }
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("pattern.png");
-        background-repeat: repeat;
-        background-size: 180px;
-        opacity: 0.08;
-        z-index: -1;
-      }
+
       .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-        padding: 60px 20px;
-        max-width: 800px;
-        margin: 0 auto;
+        max-width: 900px;
+        margin: 80px auto;
+        padding: 20px 30px;
       }
+
       .logo {
-        width: 260px;
-        margin-bottom: 20px;
+        width: 200px;
+        display: block;
+        margin: 0 auto 30px;
       }
+
       h1 {
         color: var(--main-purple);
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        font-size: 2rem;
       }
+
       h2 {
         color: var(--main-purple);
-        margin-top: 25px;
+        margin-top: 35px;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      ul {
+        margin: 0 0 25px 25px;
+      }
+
+      li {
         margin-bottom: 8px;
       }
-      ul {
-        margin: 0 0 15px 25px;
+
+      .apply {
+        text-align: center;
+        margin-top: 50px;
       }
-      form {
-        width: 100%;
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      label {
+
+      .apply a {
+        background-color: var(--main-purple);
+        color: white;
+        text-decoration: none;
         font-weight: 600;
-      }
-      input,
-      select {
-        padding: 8px 10px;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        font-family: "Cairo", sans-serif;
-      }
-      button {
-        margin-top: 15px;
-        background: var(--main-purple);
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
+        padding: 14px 36px;
         border-radius: 8px;
-        cursor: pointer;
-        font-weight: bold;
+        transition: 0.3s;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 10px rgba(116, 95, 242, 0.2);
       }
-      button:hover {
-        background: #624cd8;
+
+      .apply a:hover {
+        background-color: #624cd8;
+        box-shadow: 0 6px 14px rgba(116, 95, 242, 0.3);
       }
+
       .footer {
         text-align: center;
-        padding: 25px 0;
-        font-size: 0.9rem;
+        margin-top: 80px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
         color: #666;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-        margin-top: 60px;
+        font-size: 0.9rem;
       }
+
       .footer span {
         color: var(--main-purple);
-        font-weight: 600;
+        font-weight: 700;
       }
-      .endpage {
-        text-align: center;
-        padding: 100px 20px;
-        display: none;
-      }
-      .endpage h2 {
-        color: var(--main-purple);
-        margin-bottom: 10px;
-      }
-      .endpage p {
-        color: #333;
-        font-size: 1.1rem;
-      }
-      .loading {
-        display: none;
-        text-align: center;
-        margin-top: 20px;
-      }
-      .loading-spinner {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid var(--main-purple);
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        animation: spin 2s linear infinite;
-        margin: 0 auto 10px;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 1.6rem;
+        }
+        .apply a {
+          font-size: 1rem;
+          padding: 12px 28px;
+        }
       }
     </style>
   </head>
-
   <body>
-    <div class="content" id="mainContent">
+    <div class="content">
       <img src="logo.png" class="logo" alt="Saleaah logo" />
 
-      <h1 id="jobTitle">Sales Specialist</h1>
+      <h1>Sales Specialist</h1>
 
       <h2>Key Responsibilities:</h2>
       <ul>
-        <li>
-          Building and nurturing strong relationships with our current clients.
-        </li>
-        <li>
-          Strategically expanding our clients' network by identifying and
-          securing the best deals.
-        </li>
-        <li>
-          Leading the expansion into new clients aligned with Saleaah's vision.
-        </li>
+        <li>Building and nurturing strong relationships with our current clients.</li>
+        <li>Strategically expanding our clients' network by identifying and securing the best deals.</li>
+        <li>Leading the expansion into new clients aligned with Saleaah's vision.</li>
         <li>Coordinating the entire order cycle with clients.</li>
-        <li>
-          Collaborating closely with the procurement team to ensure smooth
-          operations.
-        </li>
-        <li>
-          Leading negotiations on prices and other critical terms with clients.
-        </li>
+        <li>Collaborating closely with the procurement team to ensure smooth operations.</li>
+        <li>Leading negotiations on prices and other critical terms with clients.</li>
       </ul>
 
       <h2>Requirements:</h2>
       <ul>
-        <li>
-          Bachelor's degree in Marketing, Business Administration, or a related
-          field.
-        </li>
+        <li>Bachelor's degree in Marketing, Business Administration, or a related field.</li>
         <li>1–3 years of experience in customer relations or sales.</li>
-        <li>
-          Strong analytical and problem-solving skills, data-driven
-          decision-making.
-        </li>
+        <li>Strong analytical and problem-solving skills, data-driven decision-making.</li>
         <li>Excellent communication and interpersonal skills.</li>
         <li>Exceptional organizational skills and meticulous attention.</li>
         <li>Experience in the Poultry Industry.</li>
@@ -182,174 +135,16 @@
         <li>Saudi Nationality – Riyadh-based.</li>
       </ul>
 
-      <form id="jobForm">
-        <label>Name</label>
-        <input type="text" id="name" name="name" required />
+      <div class="apply">
+        <a
+          href="mailto:s.alanzi@saleaah.com?subject=Sales%20Specialist%20Application&body=Dear%20Saleaah%20Team,%0D%0A%0D%0AI'm%20interested%20in%20applying%20for%20the%20Sales%20Specialist%20role.%0D%0A%0D%0APlease%20find%20my%20résumé%20attached.%0D%0A%0D%0ABest%20regards,%0D%0A"
+          >Send your Résumé</a
+        >
+      </div>
 
-        <label>Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label>Phone Number</label>
-        <input type="tel" id="phone" name="phone" required pattern="[0-9]{9,}" />
-
-        <label>Gender</label>
-        <select id="gender" name="gender" required>
-          <option value="">Select</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-
-        <label>Nationality</label>
-        <select id="nationality" name="nationality" required>
-          <option value="">Select</option>
-          <option value="Saudi">Saudi</option>
-          <option value="Others">Others</option>
-        </select>
-
-        <label>Are you based in Riyadh?</label>
-        <select id="riyadh" name="riyadh" required>
-          <option value="">Select</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-
-        <label>Do you have a bachelor's degree?</label>
-        <select id="degree" name="degree" required>
-          <option value="">Select</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-
-        <label>Have you worked in the Food & Beverage industry?</label>
-        <select id="fnb" name="fnb" required>
-          <option value="">Select</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-
-        <label>Have you worked in the Poultry industry?</label>
-        <select id="poultry" name="poultry" required>
-          <option value="">Select</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-
-        <label>LinkedIn Profile</label>
-        <input type="url" id="linkedin" name="linkedin" required />
-
-        <label>Upload your CV (PDF/DOC)</label>
-        <input
-          type="file"
-          id="cv"
-          name="cv"
-          accept=".pdf,.doc,.docx"
-          required
-        />
-
-        <button type="submit" id="submitButton">Submit Application</button>
-        
-        <div class="loading" id="loadingIndicator">
-          <div class="loading-spinner"></div>
-          <p>Submitting your application...</p>
-        </div>
-      </form>
+      <div class="footer">
+        © 2025 <span>Saleaah</span> — All rights reserved
+      </div>
     </div>
-
-    <div class="endpage" id="endPage">
-      <h2>Your application has been submitted ✔</h2>
-      <p>Thank you for applying. Our team will review your profile and contact you if there is a match.</p>
-    </div>
-
-    <footer class="footer">
-      © 2025 <span>Saleaah</span> — All rights reserved
-    </footer>
-
-    <script>
-      // تحديث هذا العنوان مع عنوان webhook الخاص بك من Make.com
-      const webhookURL = "https://hook.eu2.make.com/stktg5xxj5j7r65dcxsbkywvcxgoq48h";
-      
-      const form = document.getElementById("jobForm");
-      const mainContent = document.getElementById("mainContent");
-      const endPage = document.getElementById("endPage");
-      const loadingIndicator = document.getElementById("loadingIndicator");
-      const submitButton = document.getElementById("submitButton");
-      
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        
-        // إظهار مؤشر التحميل وتعطيل زر الإرسال
-        submitButton.disabled = true;
-        loadingIndicator.style.display = "block";
-        
-        try {
-          // التحقق من وجود ملف CV
-          const fileInput = document.getElementById('cv');
-          if (!fileInput.files || fileInput.files.length === 0) {
-            throw new Error("Please select a CV file");
-          }
-          
-          const file = fileInput.files[0];
-          
-          // قراءة الملف كـ base64
-          const base64File = await new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
-          });
-          
-          // إعداد البيانات للإرسال
-          const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            gender: document.getElementById('gender').value,
-            nationality: document.getElementById('nationality').value,
-            riyadh: document.getElementById('riyadh').value,
-            degree: document.getElementById('degree').value,
-            fnb: document.getElementById('fnb').value,
-            poultry: document.getElementById('poultry').value,
-            linkedin: document.getElementById('linkedin').value,
-            cv: base64File,
-            filename: file.name,
-            filetype: file.type
-          };
-          
-          console.log("Sending data to Make.com webhook...");
-          
-          // إرسال البيانات إلى webhook
-          const response = await fetch(webhookURL, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-          });
-          
-          console.log("Response received:", response);
-          
-          if (response.ok) {
-            console.log("Form submitted successfully!");
-            // إخفاء النموذج وإظهار صفحة النجاح
-            mainContent.style.display = "none";
-            endPage.style.display = "block";
-            window.scrollTo(0, 0);
-          } else {
-            const errorText = await response.text();
-            throw new Error(`Server error: ${errorText}`);
-          }
-          
-        } catch (error) {
-          console.error("Error:", error);
-          
-          // إعادة تمكين زر الإرسال وإخفاء مؤشر التحميل
-          submitButton.disabled = false;
-          loadingIndicator.style.display = "none";
-          
-          // عرض رسالة الخطأ للمستخدم
-          alert(`Error submitting form: ${error.message || "Unknown error occurred"}`);
-        }
-      });
-    </script>
   </body>
 </html>
